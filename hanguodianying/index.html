@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩国电影深度指南：探索韩国经典电影、最新影讯、导演作品及韩国电影文化解析。提供韩国电影排名、影评分析及观影指南。">
+    <meta name="keywords" content="韩国电影, 韩国影史经典, 韩国新片推荐, 韩国导演, 韩国电影榜单">
+    <title>韩国电影-经典韩影回顾与最新韩片观影指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914; /* 类似Netflix红 */
+            --secondary-color: #221f1f;
+            --accent-color: #b81d24;
+            --text-main: #333333;
+            --text-light: #757575;
+            --bg-body: #141414;
+            --bg-card: #1f1f1f;
+            --bg-nav: rgba(0, 0, 0, 0.95);
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg-nav);
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #e5e5e5;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .search-icon {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+        /* Hero Section - 首屏 */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%), 
+                        url('https://picsum.photos/seed/korea-film-hero/1920/1080.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 2px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+        }
+
+        .btn-secondary {
+            background-color: rgba(109, 109, 110, 0.7);
+            color: white;
+            margin-left: 10px;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(109, 109, 110, 0.4);
+        }
+
+        /* 分类导航 */
+        .category-nav {
+            padding: 30px 0;
+            background-color: var(--bg-body);
+            border-bottom: 1px solid #333;
+        }
+
+        .category-list {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .category-item {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            cursor: pointer;
+            white-space: nowrap;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .category-item:hover, .category-item.active {
+            color: #fff;
+            border-bottom-color: var(--primary-color);
+        }
+
+        /* 通用 Section 样式 */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 16px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .section-link {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .section-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* 电影卡片网格 */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .movie-card {
+            background-color: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .poster-wrapper {
+            position: relative;
+            padding-top: 150%; /* 2:3 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .poster-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .movie-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .rating-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #46d369;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        /* 重点推荐 / 大图 */
+        .featured-movie {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+            background: linear-gradient(to bottom, #1f1f1f, #141414);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .featured-poster {
+            position: relative;
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .featured-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 40px;
+        }
+
+        .featured-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .featured-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .tag {
+            background-color: rgba(255,255,255,0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* 导演/人物侧边栏 */
+        .directors-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .director-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px;
+            background-color: var(--bg-card);
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .director-item:hover {
+            background-color: #333;
+        }
+
+        .director-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .director-info h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .director-info p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* 影史经典榜单 */
+        .timeline-list {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid #333;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            border: 2px solid var(--bg-body);
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+            color: #757575;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .featured-movie {
+                grid-template-columns: 1fr;
+            }
+            .featured-poster {
+                min-height: 250px;
+                order: -1; /* 图片在手机端显示在上方 */
+            }
+            .nav-links {
+                display: none; /* 简化移动端，实际项目需汉堡菜单 */
+            }
+            .hero {
+                height: 70vh;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">K-MOVIE</a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">最新上映</a>
+                <a href="#">经典回顾</a>
+                <a href="#">导演专题</a>
+                <a href="#">影评专栏</a>
+                <a href="#">关于我们</a>
+            </nav>
+            <div class="search-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-tag">本周推荐</span>
+                    <h1>寄生虫：生存的隐喻与社会的伤痕</h1>
+                    <p>奉俊昊执导的这部杰作不仅横扫戛纳金棕榈，更深刻揭示了贫富差距下的社会裂痕。点击观看深度解析与预告。</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary">立即观看</a>
+                        <a href="#" class="btn btn-secondary">加入片单</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分类导航 -->
+        <div class="category-nav">
+            <div class="container">
+                <ul class="category-list">
+                    <li class="category-item active">全部</li>
+                    <li class="category-item">惊悚悬疑</li>
+                    <li class="category-item">爱情剧情</li>
+                    <li class="category-item">犯罪动作</li>
+                    <li class="category-item">历史传记</li>
+                    <li class="category-item">科幻奇幻</li>
+                    <li class="category-item">喜剧</li>
+                    <li class="category-item">动画</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 热门电影 -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门韩国电影</h2>
+                <a href="#" class="section-link">查看全部 ></a>
+            </div>
+            <div class="movie-grid">
+                <!-- 电影卡片 1 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/korean-movie-1/300/450" alt="釜山行海报">
+                        <div class="rating-badge">9.2</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">釜山行</h3>
+                        <div class="movie-meta">
+                            <span>2016</span>
+                            <span>动作/灾难</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 电影卡片 2 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/korean-movie-2/300/450" alt="老男孩海报">
+                        <div class="rating-badge">8.9</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">老男孩</h3>
+                        <div class="movie-meta">
+                            <span>2003</span>
+                            <span>惊悚/剧情</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 电影卡片 3 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/korean-movie-3/300/450" alt="杀人回忆海报">
+                        <div class="rating-badge">8.9</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">杀人回忆</h3>
+                        <div class="movie-meta">
+                            <span>2003</span>
+                            <span>犯罪/悬疑</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 电影卡片 4 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/korean-movie-4/300/450" alt="新世界海报">
+                        <div class="rating-badge">8.7</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">新世界</h3>
+                        <div class="movie-meta">
+                            <span>2013</span>
+                            <span>犯罪/剧情</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 电影卡片 5 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/korean-movie-5/300/450" alt="辩护人海报">
+                        <div class="rating-badge">8.8</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">辩护人</h3>
+                        <div class="movie-meta">
+                            <span>2013</span>
+                            <span>剧情/传记</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 电影卡片 6 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/korean-movie-6/300/450" alt="熔炉海报">
+                        <div class="rating-badge">9.0</div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="movie-title">熔炉</h3>
+                        <div class="movie-meta">
+                            <span>2011</span>
+                            <span>剧情/犯罪</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 重点推荐 -->
+        <section class="container">
+            <div class="featured-movie">
+                <div class="featured-poster">
+                    <img src="https://picsum.photos/seed/korean-movie-7/800/1200" alt="素媛剧照">
+                </div>
+                <div class="featured-content">
+                    <span class="hero-tag">年度必看</span>
+                    <h2>素媛：法律与人性的拷问</h2>
+                    <div class="featured-meta">
+                        <span class="tag">2013</span>
+                        <span class="tag">剧情/犯罪</span>
+                        <span class="tag">奉俊昊监制</span>
+                    </div>
+                    <p style="margin-bottom: 20px; color: #ccc;">
+                        这部影片改编自真实事件，讲述了一个未成年女孩在遭遇性侵后，其家庭以及社会如何面对创伤、寻求正义的故事。影片没有过度的血腥描写，而是用细腻的镜头语言探讨了社会道德底线与法律制度的完善。
+                    </p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" class="btn btn-primary">查看详情</a>
+                        <a href="#" class="btn btn-secondary">评分: 9.1</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+            <!-- 经典榜单 -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">影史经典时间轴</h2>
+                </div>
+                <div class="timeline-list">
+                    <div class="timeline-item">
+                        <div class="timeline-year">1999</div>
+                        <h3 class="timeline-title">生死谍变</h3>
+                        <p class="timeline-desc">韩国影史的里程碑之作，确立了韩国动作谍战片的新标准。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2003</div>
+                        <h3 class="timeline-title">老男孩 / 杀人回忆</h3>
+                        <p class="timeline-desc">朴赞郁与奉俊昊同时期爆发，将韩国电影推向国际视野。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2006</div>
+                        <h3 class="timeline-title">汉江怪物</h3>
+                        <p class="timeline-desc">类型片的集大成者，展示了韩国商业大片的工业化水准。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2019</div>
+                        <h3 class="timeline-title">寄生虫</h3>
+                        <p class="timeline-desc">戛纳金棕榈得主，全球范围内引发对阶级议题的广泛讨论。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 知名导演 -->
+            <aside>
+                <div class="section-header">
+                    <h2 class="section-title">代表导演</h2>
+                </div>
+                <div class="directors-list">
+                    <div class="director-item">
+                        <img src="https://picsum.photos/seed/director1/80/80" alt="奉俊昊" class="director-avatar">
+                        <div class="director-info">
+                            <h4>奉俊昊</h4>
+                            <p>代表作：《寄生虫》、《杀人回忆》</p>
+                        </div>
+                    </div>
+                    <div class="director-item">
+                        <img src="https://picsum.photos/seed/director2/80/80" alt="李沧东" class="director-avatar">
+                        <div class="director-info">
+                            <h4>李沧东</h4>
+                            <p>代表作：《燃烧》、《诗》</p>
+                        </div>
+                    </div>
+                    <div class="director-item">
+                        <img src="https://picsum.photos/seed/director3/80/80" alt="奉尚元" class="director-avatar">
+                        <div class="director-info">
+                            <h4>奉尚元</h4>
+                            <p>代表作：《新世界》、《暗杀》</p>
+                        </div>
+                    </div>
+                    <div class="director-item">
+                        <img src="https://picsum.photos/seed/director4/80/80" alt="金知云" class="director-avatar">
+                        <div class="director-info">
+                            <h4>金知云</h4>
+                            <p>代表作：《老男孩》、《釜山行》</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- 观影指南 -->
+        <section class="container" style="background-color: #1a1a1a; border-radius: 8px; padding: 40px;">
+            <div class="section-header">
+                <h2 class="section-title">韩国电影观影指南</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <article>
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">如何开始观看韩国电影？</h3>
+                    <p style="color: #aaa; font-size: 0.95rem;">
+                        对于初次接触韩国电影的观众，建议从商业类型片入手，如《釜山行》、《密阳》等，这些影片节奏紧凑，叙事清晰，能快速建立对韩国电影风格的认知。
+                    </p>
+                </article>
+                <article>
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">韩国电影的叙事特点</h3>
+                    <p style="color: #aaa; font-size: 0.95rem;">
+                        韩国电影擅长在类型框架内融入强烈的社会现实主义色彩，无论是恐怖片还是爱情片，往往都映射着韩国社会的现实问题，如家庭结构、司法制度、职场文化等。
+                    </p>
+                </article>
+                <article>
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">推荐观看渠道</h3>
+                    <p style="color: #aaa; font-size: 0.95rem;">
+                        目前国内可以通过各大流媒体平台观看部分韩国电影，部分经典老片在视频网站也有正版资源。部分新片可能需要通过特定渠道获取。
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>K-MOVIE</h3>
+                    <p style="line-height: 1.8;">致力于为华语观众提供最全面、最专业的韩国电影资讯与深度解析。探索韩国电影的独特魅力。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>分类浏览</h3>
+                    <ul>
+                        <li><a href="#">最新上映</a></li>
+                        <li><a href="#">高分榜单</a></li>
+                        <li><a href="#">导演专题</a></li>
+                        <li><a href="#">经典回顾</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">联系合作</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关注我们</h3>
+                    <ul>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">豆瓣小组</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 K-MOVIE 韩国电影指南. All rights reserved. 本站内容仅供学习交流使用，版权归原作者所有。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
