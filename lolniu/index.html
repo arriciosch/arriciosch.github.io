@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LOL牛头人阿利斯塔全攻略，包含出装推荐、符文搭配、连招技巧、实战教学及操作意识分析。">
+    <meta name="keywords" content="LOL牛头,阿利斯塔,英雄联盟牛头,牛头出装,牛头符文,牛头连招">
+    <title>LOL牛头-阿利斯塔硬辅攻略与实战教学指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2d8cff;
+            --secondary-color: #ff9800;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --border-color: #333;
+            --accent-red: #ff4d4d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-search {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-search:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(45, 140, 255, 0.2) 0%, rgba(18, 18, 18, 1) 100%);
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 60px 0;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* Runes & Build */
+        .build-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .build-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .build-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .build-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .stat-val {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .item-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .item-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        /* Combo Guide */
+        .combo-section {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .combo-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .combo-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .combo-num {
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .combo-content h4 {
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .combo-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .guide-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 10px;
+        }
+
+        .checklist li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+        }
+
+        .checklist li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .chart-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border: 1px dashed var(--border-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <div class="logo">
+            <span>⚔️</span> LOL牛头攻略
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#runes">符文出装</a></li>
+                <li><a href="#combo">连招教学</a></li>
+                <li><a href="#tips">实战意识</a></li>
+            </ul>
+        </nav>
+        <button class="btn-search">搜索英雄</button>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>阿利斯塔：守护与开团的基石</h1>
+        <p>掌握硬辅核心，学习如何用“横扫千军”掌控战场节奏，保护C位并创造击杀机会。</p>
+        <div class="hero-tags">
+            <span class="tag">辅助</span>
+            <span class="tag">开团型</span>
+            <span class="tag">控制型</span>
+            <span class="tag">高分段热门</span>
+        </div>
+    </section>
+
+    <div class="main-content">
+        <!-- Left Column -->
+        <div class="content-area">
+            
+            <!-- Runes & Build -->
+            <section id="runes">
+                <div class="section-header">
+                    <h2 class="section-title">符文与出装</h2>
+                </div>
+                <div class="build-grid">
+                    <!-- Primary Build -->
+                    <article class="build-card">
+                        <h3>🛡️ 主系：余震</h3>
+                        <div class="stat-row">
+                            <span>基石符文</span>
+                            <span class="stat-val">余震</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>属性碎片</span>
+                            <span class="stat-val">+9.6 护甲 +6 适应之力 +7.2 生命值</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>副系选择</span>
+                            <span class="stat-val">坚定 + 过度生长</span>
+                        </div>
+                        <div class="item-list">
+                            <div class="item-row"><div class="item-dot" style="background:#d4af37"></div>基克的聚合</div>
+                            <div class="item-row"><div class="item-dot" style="background:#d4af37"></div>守望者铠甲</div>
+                            <div class="item-row"><div class="item-dot" style="background:#d4af37"></div>骑士之誓</div>
+                            <div class="item-row"><div class="item-dot" style="background:#d4af37"></div>救赎</div>
+                            <div class="item-row"><div class="item-dot" style="background:#d4af37"></div>石像鬼板甲</div>
+                        </div>
+                    </article>
+
+                    <!-- Secondary Build -->
+                    <article class="build-card">
+                        <h3>⚔️ 备选：不灭之握</h3>
+                        <div class="stat-row">
+                            <span>适用场景</span>
+                            <span class="stat-val">对线单杀/换血</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>核心思路</span>
+                            <span class="stat-val">通过普攻触发，增加对线压制力</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>副系</span>
+                            <span class="stat-val">气定神闲 + 贪欲猎手</span>
+                        </div>
+                        <div class="item-list">
+                            <div class="item-row"><div class="item-dot" style="background:#d4af37"></div>日炎斗篷</div>
+                            <div class="item-row"><div class="item-dot" style="background:#d4af37"></div>狂徒铠甲</div>
+                            <div class="item-row"><div class="item-dot" style="background:#d4af37"></div>适应性头盔</div>
+                        </div>
+                    </article>
+
+                    <!-- Core Items -->
+                    <article class="build-card" style="border-color: var(--secondary-color);">
+                        <h3>🚀 核心装备思路</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
+                            牛头作为硬辅，核心在于控制链的衔接与减伤。出门装推荐窃法之刃或多兰之盾，根据阵容选择。
+                        </p>
+                        <div class="stat-row">
+                            <span>第一件优先</span>
+                            <span class="stat-val">基克的聚合</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>第二件优先</span>
+                            <span class="stat-val">骑士之誓/石像鬼板甲</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>第三件优先</span>
+                            <span class="stat-val">救赎</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Combo Guide -->
+            <section id="combo">
+                <div class="section-header">
+                    <h2 class="section-title">必杀连招教学</h2>
+                </div>
+                <div class="combo-section">
+                    <div class="combo-list">
+                        <div class="combo-item">
+                            <div class="combo-num">1</div>
+                            <div class="combo-content">
+                                <h4>反向Q：威慑控场</h4>
+                                <p>利用R技能的冲锋特性，向敌方英雄方向相反的方向释放，将敌方英雄撞向我方防御塔或队友。这是牛头最核心的位移控制手段。</p>
+                            </div>
+                        </div>
+                        <div class="combo-item">
+                            <div class="combo-num">2</div>
+                            <div class="combo-content">
+                                <h4>WQ二连：闪现开团</h4>
+                                <p>W技能的眩晕可以取消Q技能的前摇，是打出完美控制链的关键。先手W晕住，接Q将人撞回或撞向队友。</p>
+                            </div>
+                        </div>
+                        <div class="combo-item">
+                            <div class="combo-num">3</div>
+                            <div class="combo-content">
+                                <h4>RW二连：强制位移</h4>
+                                <p>在敌人即将逃出范围时，先使用R冲锋，随后紧接W眩晕。这能确保敌人无法走出你的控制圈，常用于越塔强杀。</p>
+                            </div>
+                        </div>
+                        <div class="combo-item">
+                            <div class="combo-num">4</div>
+                            <div class="combo-content">
+                                <h4>EQ闪：极限开团</h4>
+                                <p>配合召唤师技能闪现，使用E技能重击，随后立即闪现到敌人身后并接Q。这是高阶玩家使用的极限操作，对时机要求极高。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Game Awareness -->
+            <section id="tips">
+                <div class="section-header">
+                    <h2 class="section-title">实战意识与技巧</h2>
+                </div>
+                <article class="build-card">
+                    <h3>👁️ 视野与游走</h3>
+                    <p style="margin-bottom: 15px; color: var(--text-muted);">
+                        牛头不需要像软辅那样频繁清线。前期应专注于插眼和反野。利用E技能的加速效果快速支援中路或上路。
+                    </p>
+                    <h3>🛡️ 保护与反打</h3>
+                    <p style="margin-bottom: 15px; color: var(--text-muted);">
+                        在己方C位被切时，不要第一时间冲上去吃伤害，而是利用Q技能反向拉回敌人。当敌方关键控制技能交出后，再开启W或R进行反打。
+                    </p>
+                    <h3>🧠 开团时机</h3>
+                    <p style="color: var(--text-muted);">
+                        除非是开团型阵容，否则尽量避免先手。等待敌方关键控制技能（如盲僧R、皇子R）交出后，利用牛头的控制链进行收割。
+                    </p>
+                </article>
+            </section>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+            <!-- Win Rate Chart Placeholder -->
+            <div class="guide-card">
+                <h3>胜率分析</h3>
+                <div class="chart-placeholder">
+                    [胜率数据图表区域]
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+                    阿利斯塔在当前版本中胜率稳定，但在高分段表现优异。
+                </p>
+            </div>
+
+            <!-- Checklist -->
+            <div class="guide-card">
+                <h3>新手必读清单</h3>
+                <ul class="checklist">
+                    <li>永远不要把Q放空</li>
+                    <li>出门装根据对面AD/AP选择</li>
+                    <li>记住所有连招的取消前摇技巧</li>
+                    <li>大招不要无脑交，留着保命或绝杀</li>
+                    <li>注意R技能的冲锋距离</li>
+                </ul>
+            </div>
+
+            <!-- FAQ -->
+            <div class="guide-card">
+                <h3>常见问题 (FAQ)</h3>
+                <div style="margin-bottom: 15px;">
+                    <h4 style="color: var(--text-main); font-size: 0.95rem; margin-bottom: 5px;">Q技能可以撞野怪吗？</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">可以，但撞野怪会减少R技能的冲锋距离，且无法造成额外伤害。</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-main); font-size: 0.95rem; margin-bottom: 5px;">W技能可以穿墙吗？</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">不可以，W技能无法穿墙。</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">英雄数据库</a></li>
+                    <li><a href="#">版本更新日志</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>攻略分类</h4>
+                <ul>
+                    <li><a href="#">上单攻略</a></li>
+                    <li><a href="#">打野攻略</a></li>
+                    <li><a href="#">中单攻略</a></li>
+                    <li><a href="#">下路攻略</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>社区互动</h4>
+                <ul>
+                    <li><a href="#">玩家论坛</a></li>
+                    <li><a href="#">战绩查询</a></li>
+                    <li><a href="#">皮肤预览</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    本站所有攻略基于官方数据整理，仅供学习参考。
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 LOL牛头攻略网. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
