@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深夜网-舒缓心灵的城市夜读与情感电台</title>
+    <meta name="description" content="深夜网为您提供深夜情感故事、治愈系电台音频、都市夜归人心理疏导及静谧阅读空间。在喧嚣的城市中寻找片刻宁静，伴您入眠。">
+    <meta name="keywords" content="深夜网, 深夜故事, 情感电台, 治愈系, 都市夜归人, 心理疏导, 深夜阅读">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #1a1d24;
+            --card-hover: #232730;
+            --text-main: #e0e0e0;
+            --text-muted: #9ca3af;
+            --accent-color: #8b5cf6; /* 紫色，代表神秘与宁静 */
+            --accent-hover: #7c3aed;
+            --border-color: #2d313a;
+            --nav-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            height: var(--nav-height);
+            background-color: rgba(15, 17, 21, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(15,17,21,0) 0%, var(--bg-color) 100%),
+                        url('https://picsum.photos/seed/deepnight/1920/1080.jpg') center/cover no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, rgba(15, 17, 21, 0.8) 70%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 36px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .section-more {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .section-more a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Audio Section */
+        .audio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .audio-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .audio-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .audio-thumb {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(139, 92, 246, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .audio-card:hover .play-icon {
+            opacity: 1;
+        }
+
+        .play-icon::after {
+            content: '';
+            border-style: solid;
+            border-width: 8px 0 8px 14px;
+            border-color: transparent transparent transparent white;
+            margin-left: 4px;
+        }
+
+        .audio-info {
+            padding: 20px;
+        }
+
+        .audio-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .audio-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Reading Section */
+        .reading-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .article-item {
+            display: flex;
+            gap: 25px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .article-item:last-child {
+            border-bottom: none;
+        }
+
+        .article-img {
+            width: 220px;
+            height: 140px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .article-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .article-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .article-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-footer {
+            display: flex;
+            gap: 20px;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .topic-list li {
+            margin-bottom: 12px;
+        }
+
+        .topic-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .topic-list a:hover {
+            color: var(--text-main);
+        }
+
+        .topic-count {
+            background-color: rgba(255,255,255,0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+        }
+
+        /* Mood Selector */
+        .mood-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .mood-tag {
+            padding: 6px 14px;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .mood-tag:hover, .mood-tag.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b0c0f;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #4b5563;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-menu { display: none; } /* Simplified for mobile */
+            .reading-layout { grid-template-columns: 1fr; }
+            .article-item { flex-direction: column; }
+            .article-img { width: 100%; height: 180px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>❖</span> 深夜网
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">情感电台</a></li>
+                    <li><a href="#">深夜故事</a></li>
+                    <li><a href="#">心理疏导</a></li>
+                    <li><a href="#">城市夜话</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">🔍</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>城市入眠指南</h1>
+                <p>在喧嚣的都市中，这里是你心灵的避风港。无论是失眠的焦虑，还是深夜的孤独，我们用声音和文字陪你度过漫长的黑夜。</p>
+                <a href="#listen" class="cta-button">开始聆听</a>
+            </div>
+        </section>
+
+        <!-- Audio / Radio Section -->
+        <section class="container" id="listen">
+            <div class="section-header">
+                <h2 class="section-title">深夜电台</h2>
+                <a href="#" class="section-more">查看全部 &rarr;</a>
+            </div>
+            <div class="audio-grid">
+                <!-- Card 1 -->
+                <article class="audio-card">
+                    <div class="audio-thumb">
+                        <img src="https://picsum.photos/seed/radio1/400/250" alt="电台封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="audio-info">
+                        <h3 class="audio-title">《第25个小时的梦》</h3>
+                        <div class="audio-meta">
+                            <span>主播：林间风</span>
+                            <span>28:45</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 2 -->
+                <article class="audio-card">
+                    <div class="audio-thumb">
+                        <img src="https://picsum.photos/seed/radio2/400/250" alt="电台封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="audio-info">
+                        <h3 class="audio-title">给异地恋人的晚安信</h3>
+                        <div class="audio-meta">
+                            <span>主播：城市夜归人</span>
+                            <span>22:10</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article class="audio-card">
+                    <div class="audio-thumb">
+                        <img src="https://picsum.photos/seed/radio3/400/250" alt="电台封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="audio-info">
+                        <h3 class="audio-title">缓解焦虑的三个呼吸法</h3>
+                        <div class="audio-meta">
+                            <span>科普：心理师小周</span>
+                            <span>15:30</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Reading Section -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">深夜故事</h2>
+                <a href="#" class="section-more">查看全部 &rarr;</a>
+            </div>
+            <div class="reading-layout">
+                <div class="article-list">
+                    <article class="article-item">
+                        <img src="https://picsum.photos/seed/story1/300/200" alt="故事配图" class="article-img">
+                        <div class="article-content">
+                            <span class="article-tag">都市情感</span>
+                            <h3 class="article-title">凌晨三点的便利店，藏着成年人的崩溃与救赎</h3>
+                            <p class="article-excerpt">在这个城市，凌晨三点的灯光是唯一不会打烊的安慰。关于加班、关于孤独、关于那些未曾说出口的再见...</p>
+                            <div class="article-footer">
+                                <span>2023-10-24</span>
+                                <span>阅读：1.2w</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-item">
+                        <img src="https://picsum.photos/seed/story2/300/200" alt="故事配图" class="article-img">
+                        <div class="article-content">
+                            <span class="article-tag">治愈系</span>
+                            <h3 class="article-title">如果你现在睡不着，不妨读读这段话</h3>
+                            <p class="article-excerpt">睡眠是最好的良药，但有时候我们只是需要一点心理暗示。试着放下手机，想象自己正躺在一片柔软的草地上...</p>
+                            <div class="article-footer">
+                                <span>2023-10-23</span>
+                                <span>阅读：8,542</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-item">
+                        <img src="https://picsum.photos/seed/story3/300/200" alt="故事配图" class="article-img">
+                        <div class="article-content">
+                            <span class="article-tag">职场</span>
+                            <h3 class="article-title">为什么你总是感到疲惫？可能是“情绪性失眠”</h3>
+                            <p class="article-excerpt">白天为了工作戴上面具，夜晚卸下面具后却无法入睡。探讨职场人在深夜的情绪反噬与自我调节。</p>
+                            <div class="article-footer">
+                                <span>2023-10-22</span>
+                                <span>阅读：3,100</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <aside>
+                    <!-- Mood Selector -->
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">此刻心情</h4>
+                        <div class="mood-selector">
+                            <span class="mood-tag active">平静</span>
+                            <span class="mood-tag">忧伤</span>
+                            <span class="mood-tag">焦虑</span>
+                            <span class="mood-tag">孤独</span>
+                            <span class="mood-tag">释怀</span>
+                            <span class="mood-tag">期待</span>
+                        </div>
+                    </div>
+
+                    <!-- Topics -->
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">热门话题</h4>
+                        <ul class="topic-list">
+                            <li><a href="#">#单身夜读 <span class="topic-count">2.3k</span></a></li>
+                            <li><a href="#">#职场吐槽 <span class="topic-count">1.8k</span></a></li>
+                            <li><a href="#">#异地恋 <span class="topic-count">1.5k</span></a></li>
+                            <li><a href="#">#独居生活 <span class="topic-count">980</span></a></li>
+                            <li><a href="#">#失眠自救 <span class="topic-count">850</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Quote -->
+                    <div class="sidebar-widget" style="background: linear-gradient(135deg, #1a1d24 0%, #232730 100%); border: none;">
+                        <blockquote style="font-style: italic; color: var(--text-muted); font-size: 0.9rem;">
+                            “深夜是属于你自己的时间，卸下白天的伪装，做回最真实的自己。”
+                        </blockquote>
+                        <p style="margin-top: 10px; text-align: right; font-size: 0.8rem; color: var(--accent-color);">— 深夜网寄语</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Advice / FAQ Section -->
+        <section class="container" style="margin-top: 80px;">
+            <div class="section-header">
+                <h2 class="section-title">助眠指南</h2>
+            </div>
+            <div class="reading-layout">
+                <div class="article-list">
+                    <article class="article-item">
+                        <div class="article-content">
+                            <span class="article-tag">科普</span>
+                            <h3 class="article-title">为什么睡前刷手机越刷越精神？</h3>
+                            <p class="article-excerpt">蓝光抑制褪黑素分泌，短消息带来的多巴胺刺激会让大脑保持兴奋状态。建议睡前1小时远离电子屏幕。</p>
+                        </div>
+                    </article>
+                    <article class="article-item">
+                        <div class="article-content">
+                            <span class="article-tag">方法</span>
+                            <h3 class="article-title">4-7-8 呼吸法：亲测有效的助眠技巧</h3>
+                            <p class="article-excerpt">通过控制呼吸频率来调节神经系统。吸气4秒，屏息7秒，呼气8秒，重复4次，能有效降低心率。</p>
+                        </div>
+                    </article>
+                </div>
+                <aside>
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title">常见问题</h4>
+                        <ul class="topic-list">
+                            <li><a href="#">长期失眠怎么办？</a></li>
+                            <li><a href="#">如何建立睡眠仪式感？</a></li>
+                            <li><a href="#">什么样的枕头适合侧睡？</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span>❖</span> 深夜网
+                    </a>
+                    <p>专注于为城市夜归人提供情感陪伴、心理疏导与静谧阅读空间。愿每一个失眠的夜晚，都能找到温暖的慰藉。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#">情感电台</a></li>
+                        <li><a href="#">深夜故事</a></li>
+                        <li><a href="#">心理疏导</a></li>
+                        <li><a href="#">城市夜话</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系合作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博话题</a></li>
+                        <li><a href="#">小红书</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 深夜网 版权所有 | 仅供夜间浏览</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                              </html>
