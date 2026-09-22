@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="好看的头像女精选站，提供高清唯美二次元头像、古风女生头像、ins风女生头像及个性女生头像，支持在线预览与一键保存，打造专属你的社交形象。">
+    <meta name="keywords" content="好看的头像女,女生头像,二次元头像,古风头像,ins风头像">
+    <title>好看的头像女-高清唯美女生头像精选与在线保存指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e91e63;
+            --primary-hover: #c2185b;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            color: var(--text-sub);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #f1f1f1;
+            border-radius: 20px;
+            padding: 5px 15px;
+            width: 300px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            flex: 1;
+            padding: 5px;
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--text-sub);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            border: 1px solid rgba(233, 30, 99, 0.1);
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(233, 30, 99, 0.2);
+        }
+
+        /* Main Content */
+        main {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 22px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .avatar-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .avatar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .avatar-img-wrapper {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .avatar-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .avatar-card:hover .avatar-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-info {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-top: 4px;
+        }
+
+        .download-btn {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 6px 15px;
+            background: #f0f0f0;
+            color: var(--text-main);
+            border-radius: 4px;
+            font-size: 12px;
+            transition: background 0.2s;
+        }
+
+        .avatar-card:hover .download-btn {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-item {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        .feature-text h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .feature-text p {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: #999;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5v2a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5z"></path><path d="M12 14a7 7 0 0 0-7 7v1h14v-1a7 7 0 0 0-7-7z"></path></svg>
+            女生头像站
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="active">首页</a>
+            <a href="#">二次元</a>
+            <a href="#">古风</a>
+            <a href="#">ins风</a>
+            <a href="#">高清</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索好看的头像女...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>发现你的专属气质</h1>
+    <p>精选全网最热门、最精美的女生头像，涵盖二次元、古风、简约等多种风格，助你在社交平台脱颖而出。</p>
+    <div class="hero-tags">
+        <div class="tag">甜美系</div>
+        <div class="tag">御姐范</div>
+        <div class="tag">清冷感</div>
+        <div class="tag">可爱Q版</div>
+        <div class="tag">文艺清新</div>
+    </div>
+</section>
+
+<main>
+    <section>
+        <h2 class="section-title">热门推荐</h2>
+        <div class="grid-container">
+            <!-- Card 1 -->
+            <article class="avatar-card">
+                <div class="avatar-img-wrapper">
+                    <img src="https://picsum.photos/seed/girl1/300/300" alt="甜美风女生头像" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">夏日微风·甜美风</h3>
+                    <p class="card-meta">1.2w 次使用</p>
+                    <a href="#" class="download-btn">下载原图</a>
+                </div>
+            </article>
+            <!-- Card 2 -->
+            <article class="avatar-card">
+                <div class="avatar-img-wrapper">
+                    <img src="https://picsum.photos/seed/girl2/300/300" alt="古风女生头像" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">水墨江南·古风</h3>
+                    <p class="card-meta">8,500 次使用</p>
+                    <a href="#" class="download-btn">下载原图</a>
+                </div>
+            </article>
+            <!-- Card 3 -->
+            <article class="avatar-card">
+                <div class="avatar-img-wrapper">
+                    <img src="https://picsum.photos/seed/girl3/300/300" alt="ins风女生头像" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">极简ins风·白裙</h3>
+                    <p class="card-meta">2.1w 次使用</p>
+                    <a href="#" class="download-btn">下载原图</a>
+                </div>
+            </article>
+            <!-- Card 4 -->
+            <article class="avatar-card">
+                <div class="avatar-img-wrapper">
+                    <img src="https://picsum.photos/seed/girl4/300/300" alt="清冷风女生头像" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">暗夜微光·清冷</h3>
+                    <p class="card-meta">9,200 次使用</p>
+                    <a href="#" class="download-btn">下载原图</a>
+                </div>
+            </article>
+            <!-- Card 5 -->
+            <article class="avatar-card">
+                <div class="avatar-img-wrapper">
+                    <img src="https://picsum.photos/seed/girl5/300/300" alt="可爱Q版头像" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">元气满满·Q版</h3>
+                    <p class="card-meta">3.4w 次使用</p>
+                    <a href="#" class="download-btn">下载原图</a>
+                </div>
+            </article>
+            <!-- Card 6 -->
+            <article class="avatar-card">
+                <div class="avatar-img-wrapper">
+                    <img src="https://picsum.photos/seed/girl6/300/300" alt="文艺清新头像" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">午后阳光·文艺</h3>
+                    <p class="card-meta">6,800 次使用</p>
+                    <a href="#" class="download-btn">下载原图</a>
+                </div>
+            </article>
+            <!-- Card 7 -->
+            <article class="avatar-card">
+                <div class="avatar-img-wrapper">
+                    <img src="https://picsum.photos/seed/girl7/300/300" alt="动漫女生头像" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">赛博朋克·动漫</h3>
+                    <p class="card-meta">1.5w 次使用</p>
+                    <a href="#" class="download-btn">下载原图</a>
+                </div>
+            </article>
+            <!-- Card 8 -->
+            <article class="avatar-card">
+                <div class="avatar-img-wrapper">
+                    <img src="https://picsum.photos/seed/girl8/300/300" alt="简约头像" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">线条艺术·简约</h3>
+                    <p class="card-meta">5,100 次使用</p>
+                    <a href="#" class="download-btn">下载原图</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section style="margin-top: 60px;">
+        <h2 class="section-title">为什么选择我们的头像？</h2>
+        <div class="features">
+            <div class="feature-item">
+                <div class="feature-icon">🎨</div>
+                <div class="feature-text">
+                    <h3>高清无水印</h3>
+                    <p>所有“好看的头像女”资源均经过筛选，保证画质清晰，无任何水印干扰，完美适配各大社交平台。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-text">
+                    <h3>更新速度快</h3>
+                    <p>紧跟潮流趋势，每日更新最新热门风格，从日系小清新到欧美酷飒风，满足不同审美需求。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📱</div>
+                <div class="feature-text">
+                    <h3>多端适配</h3>
+                    <p>无论是微信、QQ还是微博，我们提供的头像尺寸和风格都能完美适配，一键保存即用。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-top: 60px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: var(--shadow);">
+        <h2 class="section-title">常见问题 (FAQ)</h2>
+        <div style="max-width: 800px;">
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--text-main);">如何保存图片？</summary>
+                <p style="margin-top: 10px; color: var(--text-sub);">点击图片下方的“下载原图”按钮，图片将自动在新标签页打开，右键选择“图片另存为”即可。</p>
+            </details>
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--text-main);">这些头像可以商用吗？</summary>
+                <p style="margin-top: 10px; color: var(--text-sub);">本站所有头像资源仅供个人头像使用，如需商用请务必联系版权方获取授权。</p>
+            </details>
+            <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--text-main);">找不到喜欢的风格怎么办？</summary>
+                <p style="margin-top: 10px; color: var(--text-sub);">您可以尝试使用顶部的标签筛选，或者直接在搜索框输入关键词（如“动漫”、“纯欲”）进行查找。</p>
+            </details>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="logo" style="color: #fff; margin-bottom: 15px;">女生头像站</div>
+            <p style="font-size: 14px; line-height: 1.8;">专注提供好看的头像女资源，打造最优质的个人形象展示平台。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速导航</h4>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">最新上传</a></li>
+                <li><a href="#">热门排行</a></li>
+                <li><a href="#">分类浏览</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>支持与帮助</h4>
+            <ul>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">版权声明</a></li>
+                <li><a href="#">用户协议</a></li>
+                <li><a href="#">意见反馈</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 好看的头像女资源站. All Rights Reserved. 本站仅提供图片展示服务.
+    </div>
+</footer>
+
+</body>
+</html>
