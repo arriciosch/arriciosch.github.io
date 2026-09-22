@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>执政能力-新时代领导干部能力提升与治理现代化指南</title>
+    <meta name="description" content="本站聚焦执政能力建设，提供关于新时代领导干部执政能力提升、现代化治理体系构建、决策科学化以及公共服务优化的深度指南与资源。">
+    <meta name="keywords" content="执政能力, 领导干部, 治理现代化, 科学决策, 服务型政府">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a3c5e;
+            --secondary-color: #2c5282;
+            --accent-color: #e53e3e;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-secondary: #718096;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #63b3ed;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.85);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: white;
+            border-bottom: 2px solid #63b3ed;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .hero-btn:hover {
+            background-color: #c53030;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.6rem;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        .view-more {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Core Competencies Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-header {
+            background-color: #ebf8ff;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-header h3 {
+            color: var(--secondary-color);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-body p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .card-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+            font-size: 0.9rem;
+        }
+
+        .card-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Decision Support Section */
+        .decision-section {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .decision-content h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .decision-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .steps {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .step-content p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3748;
+            color: #a0aec0;
+            padding: 3rem 1rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #4a5568;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .decision-section {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span>◆</span> 执政能力智库
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#competencies">核心能力</a></li>
+                    <li><a href="#governance">治理体系</a></li>
+                    <li><a href="#resources">学习资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>提升执政能力，推进治理现代化</h1>
+            <p>聚焦新时代领导干部核心素质，构建科学决策体系，优化公共服务效能，实现国家治理体系和治理能力现代化。</p>
+            <a href="#competencies" class="hero-btn">探索能力模型</a>
+        </section>
+
+        <div class="container">
+            <!-- Core Competencies Section -->
+            <section id="competencies">
+                <div class="section-header">
+                    <h2>新时代执政能力核心要素</h2>
+                    <a href="#" class="view-more">查看完整图谱 →</a>
+                </div>
+                <div class="grid-3">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <div class="card-header">
+                            <h3>科学决策能力</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>在复杂环境下运用专业知识进行理性判断，运用系统思维分析问题，确保决策符合客观规律和发展实际。</p>
+                            <ul class="card-list">
+                                <li>调查研究与问题导向</li>
+                                <li>风险评估与预案制定</li>
+                                <li>民主集中制执行</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <div class="card-header">
+                            <h3>依法执政能力</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>运用法治思维和法治方式深化改革、推动发展、化解矛盾、维护稳定，建设法治政府。</p>
+                            <ul class="card-list">
+                                <li>宪法法律意识强化</li>
+                                <li>依法行政与规范用权</li>
+                                <li>普法宣传与监督</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <div class="card-header">
+                            <h3>群众工作能力</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>密切联系群众，解决群众急难愁盼问题，增强服务意识，提升人民群众的获得感、幸福感和安全感。</p>
+                            <ul class="card-list">
+                                <li>倾听民意与反馈机制</li>
+                                <li>化解基层矛盾</li>
+                                <li>精准帮扶与资源调配</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <div class="card-header">
+                            <h3>驾驭风险能力</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>建立健全风险研判、决策风险评估、风险防控协同等机制，有效防范化解各类风险挑战。</p>
+                            <ul class="card-list">
+                                <li>底线思维与忧患意识</li>
+                                <li>应急管理体系建设</li>
+                                <li>舆情引导与管控</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article class="card">
+                        <div class="card-header">
+                            <h3>改革攻坚能力</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>敢于啃硬骨头，勇于涉险滩，破除体制机制障碍，激发社会活力和发展动力。</p>
+                            <ul class="card-list">
+                                <li>创新驱动发展</li>
+                                <li>优化营商环境</li>
+                                <li>重点领域改革突破</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="card">
+                        <div class="card-header">
+                            <h3>抓落实能力</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>强化执行力，把蓝图变为现实，确保各项工作部署落地生根、开花结果。</p>
+                            <ul class="card-list">
+                                <li>清单化管理与闭环</li>
+                                <li>督查考核与问责</li>
+                                <li>团队协作与沟通</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Decision Support & Governance Section -->
+            <section id="governance">
+                <div class="section-header">
+                    <h2>治理体系与决策支持</h2>
+                </div>
+                <div class="decision-section">
+                    <div class="decision-content">
+                        <h2>构建现代化治理体系</h2>
+                        <p>执政能力的现代化体现在治理体系的完善上。通过数字化手段赋能治理，实现从“经验决策”向“数据决策”的转变，提升治理的精细化水平。</p>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>顶层设计与规划</h4>
+                                    <p>制定符合区域特点的长远发展战略。</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>制度执行与监督</h4>
+                                    <p>确保法律法规和制度规定得到严格执行。</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>反馈与优化</h4>
+                                    <p>根据实施效果及时调整政策，形成闭环。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="decision-image">
+                        <!-- Placeholder for governance diagram or visualization -->
+                        <img src="https://picsum.photos/seed/governance/600/400" alt="治理体系架构示意图" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md);">
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="resources">
+                <div class="section-header">
+                    <h2>常见问题与学习指南</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>如何提升科学决策能力？</h3>
+                        <p>首先需加强调查研究，掌握第一手资料；其次要运用系统思维分析问题，避免片面性；最后要建立多方参与的论证机制，确保决策的科学性和民主性。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>依法执政与依法行政有什么区别？</h3>
+                        <p>依法执政主要指党领导人民制定宪法法律，并在宪法法律范围内活动；依法行政则侧重于行政机关及其工作人员严格按照法律权限和程序行使权力，履行职责。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>领导干部如何有效化解基层矛盾？</h3>
+                        <p>关键在于深入基层，倾听群众诉求，将矛盾化解在萌芽状态。应坚持“枫桥经验”，依靠群众，就地解决，做到小事不出村、大事不出镇。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>什么是底线思维在执政中的体现？</h3>
+                        <p>底线思维要求领导干部凡事从最坏处着眼，向最好处努力。在制定政策、应对风险时，要预先准备好应对突发情况的预案，确保社会大局稳定。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    本站致力于提供关于执政能力建设的专业资源与理论指导，助力领导干部提升综合素质，推动国家治理现代化进程。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>核心栏目</h4>
+                <ul>
+                    <li><a href="#">能力模型构建</a></li>
+                    <li><a href="#">法治建设指南</a></li>
+                    <li><a href="#">基层治理案例</a></li>
+                    <li><a href="#">政策解读</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关链接</h4>
+                <ul>
+                    <li><a href="#">国家治理研究院</a></li>
+                    <li><a href="#">干部在线学院</a></li>
+                    <li><a href="#">法律法规库</a></li>
+                    <li><a href="#">党建研究</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 执政能力智库. 保留所有权利. 仅供学习与参考使用.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
